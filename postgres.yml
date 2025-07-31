@@ -1,0 +1,19 @@
+restapi:  
+  listen: 0.0.0.0:8008  
+  
+bootstrap:  
+  dcs:  
+    postgresql:  
+      use_pg_rewind: true  
+      parameters:  
+  
+  pg_hba:  
+    - host all all 0.0.0.0/0 md5  
+    - host replication replicator 0.0.0.0/0 md5  
+  
+postgresql:  
+  listen: 0.0.0.0:5432  
+  pgpass: /tmp/pgpass  
+  
+tags:  
+  clonefrom: true
